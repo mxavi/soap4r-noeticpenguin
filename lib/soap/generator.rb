@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # SOAP4R - SOAP XML Instance Generator library.
 # Copyright (C) 2000-2007  NAKAMURA, Hiroshi <nahi@ruby-lang.org>.
 
@@ -264,7 +265,7 @@ private
         end
       }.join
     else
-      str.gsub(@encode_char_regexp) { |c| EncodeMap[c] }
+      str.gsub(@encode_char_regexp.force_encoding('utf-8')) { |c| EncodeMap[c] }
     end
   end
 
